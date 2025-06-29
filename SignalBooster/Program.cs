@@ -3,6 +3,7 @@ using Application.ProcessSignalBoosterFile.Requests;
 using Domain.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Serilog;
 using SignalBooster;
 
 var configuration = new ConfigurationBuilder()
@@ -18,17 +19,35 @@ configuration.GetSection(nameof(SignalBoosterOptions))
 
 Services.AddServices(services);
 
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(configuration)
+    .CreateLogger();
+
 var serviceProvider = services.BuildServiceProvider();
 
 var signalBooster = serviceProvider.GetRequiredService<ISignalBooster>();
 
-var result = await signalBooster.Process(new SignalBoosterRequest(options.PhysicianFileName));
+try
+{
+    Log.Information("Starting Signal Booster processing...");
 
-if (result.IsSuccess)
-{
-    Console.WriteLine("File processed successfully.");
+    var result = await signalBooster.Process(new SignalBoosterRequest(options.PhysicianFileName));
+
+    if (result.IsSuccess)
+    {
+        Log.Information("File processed successfully.");
+    }
+    else
+    {
+        Log.Warning($"Error processing file: {result.Error}");
+    }
 }
-else
+catch (Exception ex)
 {
-    Console.WriteLine($"Error processing file: {result.Error}");
+	Log.Error(ex, "Signal Booster Error");
 }
+finally
+{
+    Log.CloseAndFlush();
+}
+

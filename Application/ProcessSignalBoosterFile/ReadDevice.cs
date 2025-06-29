@@ -8,7 +8,7 @@ using Domain.Extensions;
 
 namespace Application.ProcessSignalBoosterFile
 {
-    public class ReadDevice(ISignalBooster last) : ISignalBooster
+    public partial class ReadDevice(ISignalBooster last) : ISignalBooster
     {
         public async Task<Result<SignalBoosterResponse>> Process(SignalBoosterRequest request)
         {
