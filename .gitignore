@@ -9,3 +9,5 @@
 /Domain/obj
 /SignalBooster/bin/Debug/net9.0
 /SignalBooster/obj
+/SignalBoosterUnitTests/bin/Debug/net9.0
+/SignalBoosterUnitTests/obj
