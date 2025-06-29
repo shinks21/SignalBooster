@@ -30,7 +30,7 @@ namespace Application.ProcessSignalBoosterFile
                 Device = response.Device.GetDescription(),
                 MaskType = response.MaskType?.GetDescription(),
                 AddOns = response.AddOn != null
-                    ? new List<PatientOrderAddOnsJson> { new() { AddOn = response.AddOn.GetDescription() } }
+                    ? new List<string> {  response.AddOn.GetDescription()  }
                     : null,
                 Qualifier = response.Qualifier,
                 OrderingProvider = response.OrderingProvider

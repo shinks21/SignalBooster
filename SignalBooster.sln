@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{02
 		gitignore = gitignore
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalBoosterUnitTests", "SignalBoosterUnitTests\SignalBoosterUnitTests.csproj", "{EEB03F6B-0987-4BE4-A762-079FA88329A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{B2E47DA2-9D24-466F-911D-C2C7B4051CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2E47DA2-9D24-466F-911D-C2C7B4051CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2E47DA2-9D24-466F-911D-C2C7B4051CD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEB03F6B-0987-4BE4-A762-079FA88329A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEB03F6B-0987-4BE4-A762-079FA88329A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEB03F6B-0987-4BE4-A762-079FA88329A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEB03F6B-0987-4BE4-A762-079FA88329A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

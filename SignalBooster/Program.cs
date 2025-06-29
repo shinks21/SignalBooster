@@ -44,7 +44,7 @@ try
 }
 catch (Exception ex)
 {
-	Log.Error(ex, "Signal Booster Error");
+    Log.Error(ex, "Signal Booster Error");
 }
 finally
 {
